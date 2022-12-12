@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { NgxFhirComponent } from './ngx-fhir.component';
+import ButtonComponent from './components/button/button.component';
+// import { ButtonComponent } from './components/button/button.component';
 
 
 
 @NgModule({
   declarations: [
-    NgxFhirComponent
+    NgxFhirComponent,
+    ButtonComponent
   ],
   imports: [
   ],
   exports: [
-    NgxFhirComponent
+    NgxFhirComponent,
+    ButtonComponent
   ]
 })
 export class NgxFhirModule { }
