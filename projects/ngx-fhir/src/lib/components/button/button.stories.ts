@@ -1,6 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/angular';
-import ButtonComponent from '../projects/ngx-fhir/src/lib/components/button/button.component';
+import { Story, Meta } from '@storybook/angular/types-6-0';
+import { ButtonComponent } from './button.component';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
