@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-fhir": {
+      "projectType": "library",
+      "root": "projects/ngx-fhir",
+      "sourceRoot": "projects/ngx-fhir/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-fhir/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-fhir/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-fhir/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-fhir/src/test.ts",
+            "tsConfig": "projects/ngx-fhir/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-fhir/karma.conf.js"
+          }
+        }
+      }
+    }
+  }
+}
