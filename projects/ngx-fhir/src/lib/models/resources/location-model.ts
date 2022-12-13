@@ -3,6 +3,8 @@ import {AddressModel} from '../datatypes/address-model';
 import {TelecomModel} from '../datatypes/telecom-model';
 import {CodableConceptModel} from '../datatypes/codable-concept-model';
 import {ReferenceModel} from '../datatypes/reference-model';
+import {fhirVersions} from '../constants';
+
 export class LocationModel {
   name: string
   status: string
@@ -14,7 +16,7 @@ export class LocationModel {
   mode: string
   managingOrganization: ReferenceModel
 
-  constructor(fhirResource: any) {
+  constructor(fhirResource: any, fhirVersion?: fhirVersions) {
 
     this.name = _.get(fhirResource, 'name');
     this.status = _.get(fhirResource, 'status');

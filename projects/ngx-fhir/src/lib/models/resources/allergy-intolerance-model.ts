@@ -11,13 +11,13 @@ export class AllergyIntoleranceModel {
   substanceCoding: CodingModel[] | undefined
   // reaction: string | undefined
   asserter: ReferenceModel | undefined
-  note: [{ text: string }]  | undefined
+  note: { text: string }[] | undefined
   type: string | undefined
   category: string[] | undefined
   patient: ReferenceModel | undefined
 
   constructor(fhirResource: any, fhirVersion?: fhirVersions) {
-    this.resourceDTO(fhirVersion || fhirVersions.R4, fhirResource);
+    this.resourceDTO(fhirResource, fhirVersion || fhirVersions.R4);
   }
 
 
@@ -37,7 +37,12 @@ export class AllergyIntoleranceModel {
     this.recordedDate = _.get(fhirResource, 'recordedDate');
     this.substanceCoding = _.get(fhirResource, 'substance.coding', []);
     this.asserter = _.get(fhirResource, 'reporter');
-
+    this.note = []
+    this.category = _.get(fhirResource, 'category') ? [_.get(fhirResource, 'category')] : [];
+    let patientRef = _.get(fhirResource, 'patient.reference')
+    if(patientRef){
+      this.patient = {"reference": patientRef};
+    }
   };
 
   stu3DTO(fhirResource: any) {
@@ -64,7 +69,7 @@ export class AllergyIntoleranceModel {
     this.note = _.get(fhirResource, 'note');
   };
 
-  resourceDTO(fhirVersion: fhirVersions, fhirResource: any) {
+  resourceDTO(fhirResource: any, fhirVersion: fhirVersions) {
     switch (fhirVersion) {
       case fhirVersions.DSTU2: {
         this.commonDTO(fhirResource)
