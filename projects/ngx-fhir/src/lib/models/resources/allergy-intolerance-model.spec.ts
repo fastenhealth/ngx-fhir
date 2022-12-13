@@ -109,4 +109,46 @@ describe('AllergyIntoleranceModel', () => {
     });
 
   })
+  describe('with stu3', () => {
+
+    it('should parse example1.json', () => {
+      let fixture = require("../../fixtures/stu3/resources/allergyIntolerance/example1.json")
+      let expected = new AllergyIntoleranceModel({})
+      expected.title = 'Cashew nuts'
+      expected.status = 'confirmed'
+      expected.recordedDate = '2014-10-09T14:58:00+11:00'
+      expected.substanceCoding = [
+        {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "1160593",
+          "display":  'cashew nut allergenic extract Injectable Product'
+        }
+      ]
+      expected.asserter = {reference: 'Patient/example'}
+      expected.note = [{ text: 'The criticality is high becasue of the observed anaphylactic reaction when challenged with cashew extract.' }]
+      expected.type = 'allergy'
+      expected.category = ['food']
+      expected.patient = {reference: 'Patient/example'}
+
+      expect(new AllergyIntoleranceModel(fixture, fhirVersions.STU3)).toEqual(expected);
+    });
+
+    it('should parse example2.json', () => {
+      let fixture = require("../../fixtures/stu3/resources/allergyIntolerance/example2.json")
+      let expected = new AllergyIntoleranceModel({})
+      expected.title =  'Fish - dietary (substance)'
+      expected.status = 'confirmed'
+      expected.recordedDate = '2015-08-06T15:37:31-06:00'
+      expected.substanceCoding = []
+      // expected.asserter = {reference: 'Patient/example'}
+      // expected.note = []
+      // expected.type = 'allergy'
+      expected.category = ['food']
+      expected.patient = {reference: 'Patient/example'}
+
+      expect(new AllergyIntoleranceModel(fixture, fhirVersions.STU3)).toEqual(expected);
+    });
+
+  })
+
 });
