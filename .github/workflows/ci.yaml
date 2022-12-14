@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 18.x
       - uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
       - run: chrome --version
       - name: Test Frontend
         run: |
