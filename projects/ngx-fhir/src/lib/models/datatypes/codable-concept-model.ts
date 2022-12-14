@@ -9,7 +9,7 @@ import {CodingModel} from './coding-model';
  */
 
 export class CodableConceptModel {
-  text: string
+  text?: string
   coding: CodingModel[]
   constructor(fhirData: any) {
     this.text = _.get(fhirData, 'text', '');
