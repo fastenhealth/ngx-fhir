@@ -27,4 +27,4 @@ frontend-test-coverage: frontend-dep
 .PHONY: frontend-test-coverage-ci
 # reduce logging, disable angular-cli analytics for ci environment
 frontend-test-coverage-ci: frontend-dep
-	npx ng test --watch=false --code-coverage --browsers=ChromeHeadlessCI
+	npx ng test --watch=false --code-coverage --browsers=ChromeHeadless

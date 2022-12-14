@@ -25,7 +25,7 @@ jobs:
       - run: chrome --version
       - name: Test Frontend
         run: |
-          make frontend-test-coverage
+          make frontend-test-coverage-ci
       - name: Upload coverage reports
         uses: codecov/codecov-action@v2
         with:
