@@ -45,3 +45,4 @@ jobs:
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+          PACKAGR_NPM_AUTH_TOKEN: ${{ secrets.PACKAGR_NPM_AUTH_TOKEN }}
