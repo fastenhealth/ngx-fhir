@@ -11,7 +11,7 @@ export class AddressComponent implements OnInit {
   @Input()
   fhirData:any = {};
 
-  addressModel: AddressModel | null = null
+  addressModel: AddressModel = new AddressModel({})
 
   ngOnInit(): void {
     this.addressModel = new AddressModel(this.fhirData)

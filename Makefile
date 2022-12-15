@@ -14,6 +14,10 @@ test: frontend-test
 frontend-dep:
 	npm ci
 
+.PHONY: frontend-build
+frontend-build: frontend-dep
+	npx ng build ngx-fhir --configuration production
+
 .PHONY: frontend-test
 # reduce logging, disable angular-cli analytics for ci environment
 frontend-test: frontend-dep

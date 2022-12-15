@@ -31,7 +31,8 @@ jobs:
         with:
           version_bump_type: ${{ github.event.inputs.version_bump_type }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
+      - run: |
+          make frontend-test frontend-build
       - name: Commit Changes Locally
         id: commit
         uses: packagrio/action-releasr-node@main
@@ -39,10 +40,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
         with:
           version_metadata_path: ${{ github.event.inputs.version_metadata_path }}
-      - name: Publish Release
-        id: publish
-        uses: packagrio/action-publishr-node@main
+      - run: |
+          cd dist
+          npm publish
         env:
-          # This is necessary in order to push a commit to the repo
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-          PACKAGR_NPM_AUTH_TOKEN: ${{ secrets.PACKAGR_NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGR_NPM_AUTH_TOKEN }}
+#      - name: Publish Release
+#        id: publish
+#        uses: packagrio/action-publishr-node@main
+#        env:
+#          # This is necessary in order to push a commit to the repo
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+#          PACKAGR_NPM_AUTH_TOKEN: ${{ secrets.PACKAGR_NPM_AUTH_TOKEN }}
