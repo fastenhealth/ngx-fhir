@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/dist-storybook
 
 # Node
 /node_modules
