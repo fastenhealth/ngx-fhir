@@ -10,7 +10,7 @@ on:
       version_metadata_path:
         description: 'Path to file containing Version string'
         required: true
-        default: 'pkg/version/version.go'
+        default: 'package.json'
 
 jobs:
   release:
