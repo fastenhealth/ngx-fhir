@@ -31,5 +31,5 @@ frontend-test-coverage-ci: frontend-dep
 
 
 .PHONY: frontend-storybook
-frontend-test-coverage: frontend-test
+frontend-storybook: frontend-test
 	npm run build-storybook
