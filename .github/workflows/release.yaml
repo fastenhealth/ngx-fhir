@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 0
       - name: Bump version
         id: bump_version
-        uses: packagrio/action-bumpr-node@master
+        uses: packagrio/action-bumpr-node@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -34,14 +34,14 @@ jobs:
 
       - name: Commit Changes Locally
         id: commit
-        uses: packagrio/action-releasr-node@master
+        uses: packagrio/action-releasr-node@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
         with:
           version_metadata_path: ${{ github.event.inputs.version_metadata_path }}
       - name: Publish Release
         id: publish
-        uses: packagrio/action-publishr-node@master
+        uses: packagrio/action-publishr-node@main
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
