@@ -22,7 +22,6 @@ jobs:
       - uses: browser-actions/setup-chrome@latest
         with:
           chrome-version: stable
-      - run: chrome --version
       - name: Test Frontend
         run: |
           make frontend-test-coverage-ci
