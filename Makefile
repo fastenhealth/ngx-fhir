@@ -24,6 +24,11 @@ frontend-test: frontend-dep
 frontend-test-coverage: frontend-dep
 	npx ng test --watch=false --code-coverage
 
+.PHONY: frontend-test-ci
+# reduce logging, disable angular-cli analytics for ci environment
+frontend-test-ci: frontend-dep
+	npx ng test --watch=false --browsers=ChromeHeadless
+
 .PHONY: frontend-test-coverage-ci
 # reduce logging, disable angular-cli analytics for ci environment
 frontend-test-coverage-ci: frontend-dep
@@ -31,5 +36,5 @@ frontend-test-coverage-ci: frontend-dep
 
 
 .PHONY: frontend-storybook
-frontend-storybook: frontend-test
+frontend-storybook: frontend-test-ci
 	npm run build-storybook
