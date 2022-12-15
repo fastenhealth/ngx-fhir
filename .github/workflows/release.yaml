@@ -16,7 +16,7 @@ jobs:
   release:
     name: Create Release Commit
     runs-on: ubuntu-latest
-    container: ghcr.io/packagrio/packagr:latest-golang
+    container: ghcr.io/packagrio/packagr:latest-node
     # Service containers to run with `build` (Required for end-to-end testing)
     steps:
       - name: Checkout
