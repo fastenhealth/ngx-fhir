@@ -7,6 +7,12 @@ import {CodingModel} from './coding-model';
  * @param {any} data
  * @returns {boolean}
  */
+export function hasValue(data:any ): boolean {
+  if (Array.isArray(data)) return data.length > 0;
+  if (_.isObject(data)) return Object.keys(data).length > 0;
+
+  return false;
+};
 
 export class CodableConceptModel {
   text?: string
