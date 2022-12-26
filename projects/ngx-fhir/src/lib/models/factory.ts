@@ -34,27 +34,27 @@ export function fhirModelFactory(modelName: string, fhirResource: any, fhirVersi
    case "Appointment": {
      return new AppointmentModel(fhirResource, fhirVersion)
    }
-   case "Binary": {
-     return new BinaryModel(fhirResource, fhirVersion)
-   }
+   // case "Binary": {
+   //   return new BinaryModel(fhirResource, fhirVersion)
+   // }
    case "CarePlan": {
      return new CarePlanModel(fhirResource, fhirVersion)
    }
    case "CareTeam": {
      return new CareTeamModel(fhirResource, fhirVersion)
    }
-   case "Claim": {
-     return new ClaimModel(fhirResource, fhirVersion)
-   }
-   case "ClaimResponse": {
-     return new ClaimResponseModel(fhirResource, fhirVersion)
-   }
+   // case "Claim": {
+   //   return new ClaimModel(fhirResource, fhirVersion)
+   // }
+   // case "ClaimResponse": {
+   //   return new ClaimResponseModel(fhirResource, fhirVersion)
+   // }
    case "Condition": {
      return new ConditionModel(fhirResource, fhirVersion)
    }
-   case "Coverage": {
-     return new CoverageModel(fhirResource, fhirVersion)
-   }
+   // case "Coverage": {
+   //   return new CoverageModel(fhirResource, fhirVersion)
+   // }
    case "Device": {
      return new DeviceModel(fhirResource, fhirVersion)
    }
@@ -67,12 +67,12 @@ export function fhirModelFactory(modelName: string, fhirResource: any, fhirVersi
    case "Encounter": {
      return new EncounterModel(fhirResource, fhirVersion)
    }
-   case "ExplanationOfBenefit": {
-     return new ExplanationOfBenefitModel(fhirResource, fhirVersion)
-   }
-   case "FamilyMemberHistory": {
-     return new FamilyMemberHistoryModel(fhirResource, fhirVersion)
-   }
+   // case "ExplanationOfBenefit": {
+   //   return new ExplanationOfBenefitModel(fhirResource, fhirVersion)
+   // }
+   // case "FamilyMemberHistory": {
+   //   return new FamilyMemberHistoryModel(fhirResource, fhirVersion)
+   // }
    case "Goal": {
      return new GoalModel(fhirResource, fhirVersion)
    }
@@ -85,24 +85,24 @@ export function fhirModelFactory(modelName: string, fhirResource: any, fhirVersi
    case "Medication": {
      return new MedicationModel(fhirResource, fhirVersion)
    }
-   case "MedicationAdministration": {
-     return new MedicationAdministrationModel(fhirResource, fhirVersion)
-   }
+   // case "MedicationAdministration": {
+   //   return new MedicationAdministrationModel(fhirResource, fhirVersion)
+   // }
    case "MedicationDispense": {
      return new MedicationDispenseModel(fhirResource, fhirVersion)
    }
-   case "MedicationKnowledge": {
-     return new MedicationKnowledgeModel(fhirResource, fhirVersion)
-   }
-   case "MedicationOrder": {
-     return new MedicationOrderModel(fhirResource, fhirVersion)
-   }
-   case "MedicationRequest": {
-     return new MedicationRequestModel(fhirResource, fhirVersion)
-   }
-   case "MedicationStatement": {
-     return new MedicationStatementModel(fhirResource, fhirVersion)
-   }
+   // case "MedicationKnowledge": {
+   //   return new MedicationKnowledgeModel(fhirResource, fhirVersion)
+   // }
+   // case "MedicationOrder": {
+   //   return new MedicationOrderModel(fhirResource, fhirVersion)
+   // }
+   // case "MedicationRequest": {
+   //   return new MedicationRequestModel(fhirResource, fhirVersion)
+   // }
+   // case "MedicationStatement": {
+   //   return new MedicationStatementModel(fhirResource, fhirVersion)
+   // }
    case "Observation": {
      return new ObservationModel(fhirResource, fhirVersion)
    }
@@ -121,24 +121,24 @@ export function fhirModelFactory(modelName: string, fhirResource: any, fhirVersi
    case "Procedure": {
      return new ProcedureModel(fhirResource, fhirVersion)
    }
-   case "Questionnaire": {
-     return new QuestionnaireModel(fhirResource, fhirVersion)
-   }
-   case "QuestionnaireResponse": {
-     return new QuestionnaireResponseModel(fhirResource, fhirVersion)
-   }
-   case "ReferralRequest": {
-     return new ReferralRequestModel(fhirResource, fhirVersion)
-   }
+   // case "Questionnaire": {
+   //   return new QuestionnaireModel(fhirResource, fhirVersion)
+   // }
+   // case "QuestionnaireResponse": {
+   //   return new QuestionnaireResponseModel(fhirResource, fhirVersion)
+   // }
+   // case "ReferralRequest": {
+   //   return new ReferralRequestModel(fhirResource, fhirVersion)
+   // }
    case "RelatedPerson": {
      return new RelatedPersonModel(fhirResource, fhirVersion)
    }
    case "ResearchStudy": {
      return new ResearchStudyModel(fhirResource, fhirVersion)
    }
-   case "ResourceCategory": {
-     return new ResourceCategoryModel(fhirResource, fhirVersion)
-   }
+   // case "ResourceCategory": {
+   //   return new ResourceCategoryModel(fhirResource, fhirVersion)
+   // }
    default: {
      throw new Error("Unknown resource data structure")
    }
